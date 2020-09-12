@@ -41,6 +41,24 @@ Testing install:
 
 ***
 
+## Gradle
+
+### Gradle 6.6.1
+
+Gradle install on AWS Linux:
+
+    wget https://services.gradle.org/distributions/gradle-6.6.1-bin.zip 
+    sudo mkdir /opt/gradle && sudo unzip gradle-6.6.1-bin.zip -d /opt/gradle
+    echo 'GRADLE_HOME=/opt/gradle/gradle-6.6.1/bin' >>~/.bash_profile
+    echo 'PATH=$GRADLE_HOME:$PATH' >>~/.bash_profile
+    source ~/.bash_profile
+ 
+ Testing install:
+    
+    gradle -v
+    
+***    
+    
 ## Homebrew
 
 Homebrew install on AWS Linux:
@@ -66,7 +84,37 @@ HTTPie install (requires: PIP --> Python) on AWS Linux:
 Testing install:
 
     http -v
+    http PUT httpbin.org/put X-API-Token:123 name=John
 
+***
+
+## Java
+
+### Java 8
+
+Java 8 install on AWS Linux:
+
+    sudo yum install java-1.8.0-openjdk -y
+
+Testing install:
+
+    java -version
+
+### Java 11
+
+Java 11 install on AWS Linux:
+
+    sudo amazon-linux-extras install java-openjdk11 -y
+
+Testing install:
+
+    alternatives --config java
+    
+### Switch Java Version
+
+    sudo alternatives --config java
+    java -version
+    
 ***
 
 ## JQ
@@ -96,6 +144,25 @@ Testing install:
     npm --version
 
 ***
+
+## Maven
+
+### Maven 3.6.3
+
+Maven install on AWS Linux:
+
+    wget https://mirrors.ukfast.co.uk/sites/ftp.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+    sudo mkdir /opt/maven && sudo tar -zxf apache-maven-3.6.3-bin.tar.gz --directory /opt/maven/
+    echo 'M2_HOME=/opt/maven/apache-maven-3.6.3' >>~/.bash_profile
+    echo 'M2=$M2_HOME/bin' >>~/.bash_profile
+    echo 'PATH=$M2:$PATH' >>~/.bash_profile
+    source ~/.bash_profile
+    
+Testing install:
+
+    mvn -version
+    
+***    
 
 ## Python PIP
 

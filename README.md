@@ -33,7 +33,7 @@ Testing install after exiting shell:
 Git install on AWS Linux:
 
     sudo yum update -y
-    sudo yum install git
+    sudo yum install git -y
 
 Testing install:   
 
@@ -57,6 +57,18 @@ Testing install:
 
 ***
 
+## HTTPie
+
+HTTPie install (requires: PIP --> Python) on AWS Linux:
+
+    pip install httpie
+    
+Testing install:
+
+    http -v
+
+***
+
 ## Node
 
 Node install on AWS Linux:
@@ -70,6 +82,31 @@ Testing install:
 
     node --version
     npm --version
+
+***
+
+## Python PIP
+
+Python and PIP install on AWS Linux:
+
+    sudo yum install python37 -y
+  
+Testing install:
+
+    python3 --version
+    
+PIP install on AWS Linux:
+
+    curl -O https://bootstrap.pypa.io/get-pip.py
+    python3 get-pip.py --user
+    ls -a ~
+    sudo vi .bash_profile
+    Add the following to the profile: export PATH=LOCAL_PATH:$PATH
+    source ~/.bash_profile
+
+Testing install:
+
+    pip --version
 
 ***
 
@@ -88,3 +125,9 @@ Testing install:
     terraform -v
     
 ***    
+
+## Useful References
+
+- https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html
+- https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html
+- https://learn.hashicorp.com/tutorials/terraform/install-cli

@@ -69,6 +69,18 @@ Testing install:
 
 ***
 
+## JQ
+
+JQ install on AWS Linux:
+
+    sudo yum install jq -y
+    
+Testing install:
+
+    curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '[.[] | {message: .commit.message, name: .commit.committer.name, parents: [.parents[].html_url]}]'
+
+***
+
 ## Node
 
 Node install on AWS Linux:

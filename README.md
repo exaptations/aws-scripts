@@ -95,6 +95,7 @@ Testing install:
 Java 8 install on AWS Linux:
 
     sudo yum install java-1.8.0-openjdk -y
+    sudo yum install java-1.8.0-openjdk-devel -y
 
 Testing install:
 

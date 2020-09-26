@@ -4,6 +4,7 @@
 # Last revised 12/09/2020
 
 sudo yum update -y
+sudo yum install git -y
 # sudo yum install java-1.8.0-openjdk -y
 sudo yum install java-1.8.0-openjdk-devel -y
 sudo amazon-linux-extras install java-openjdk11 -y

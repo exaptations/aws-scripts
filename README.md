@@ -163,7 +163,15 @@ Testing install:
 
     mvn -version
     
-***    
+***
+    
+## OpenSSL
+
+OpenSSL install on AWS Linux:
+	
+	sudo yum install openssl -y
+
+***
 
 ## Python PIP
 
